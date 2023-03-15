@@ -56,7 +56,7 @@ def data_preprocessing(row):
     return [row_dict, original_df]
 
 def predict_model(row):
-    url = 'http://0.0.0.0:10000/predict'
+    url = 'http://0.0.0.0:10000'
     data = data_preprocessing(row)
     input_json = json.dumps(data[0])
     response = requests.post(url, data=input_json)
@@ -136,9 +136,9 @@ button2=st.sidebar.button('Interrupt', type='secondary', use_container_width=Tru
 st.sidebar.markdown("""
 # GROUP 25
 
- Raphael Egbudom K22723032
+ Raphael Egbudom K2272303
 
- Ehiaghe Oziegbe K22570843
+ Ehiaghe Oziegbe K2257084
 
  Amiede Iyamu K2225150
 """)
