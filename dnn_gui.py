@@ -59,7 +59,7 @@ def data_preprocessing(row):
     return [row_dict, original_df]
 
 def predict_model(row):
-    url = 'http://127.0.0.1:8000/predict'
+    url = 'https://dnn-api.onrender.com'
     data = data_preprocessing(row)
     input_json = json.dumps(data[0])
     response = requests.post(url, data=input_json)
