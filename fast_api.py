@@ -32,6 +32,3 @@ def predict(data: Dict):
     print(y_pred)
     # Return the prediction as a dictionary
     return f'{y_pred[0][0]}'
-
-if __name__=='__main__':
-    uvicorn.run(app)
