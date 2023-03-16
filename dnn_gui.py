@@ -84,12 +84,12 @@ def count_function(num):
             subset2 = pd.concat([subset2, row.to_frame().T], ignore_index=True)
             avg=subset["Amount"].mean()
             if subset.loc[0, 'Class'] == 1:
-                fraud += 1
                 fraud_df = pd.concat([fraud_df, subset.loc[0].to_frame().T], ignore_index=True)
                 fraud_df.loc[fraud, 'Time (second)'] = pd.to_datetime(subset.loc[0, 'Time (second)'], unit='s')
                 fraud_df = fraud_df.drop(['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10', 'V11', 'V12', 'V13',
                                           'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20', 'V21', 'V22', 'V23', 'V24',
                                           'V25', 'V26', 'V27', 'V28', 'Class'], axis=1)
+                fraud += 1
             elif subset.loc[0, 'Class'] == 0:
                 valid += 1
             if len(subset) < 15:
